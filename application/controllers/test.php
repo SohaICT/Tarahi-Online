@@ -2,5 +2,9 @@
 class Test extends CI_Controller
 {
 public function index()
-{echo 'pekh!';}
+{
+
+echo 'do not pekh me plz!';
+
+}
 }
