@@ -36,6 +36,9 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+//Tarahi-Online defined constants
+define('TITLE', 'طراحی آنلاین');
+define('JNG_GALLERY', '1'); //galleryID to be shown on home page
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
