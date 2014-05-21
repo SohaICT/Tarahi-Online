@@ -31,5 +31,9 @@ class Request extends CI_Model
 		if($query->num_rows() == 0)
 			return false;
 		return $query->result_array();
-	}
-}
+	}//End of function get_request_products()
+	
+}//End of class request
+/*
+ * End of file request.php
+ */
