@@ -69,18 +69,26 @@ class User extends CI_Model
 	//End of function register
 	public function get_information($uid)
 	{
-		$query = $this->db->query("select user-information.IID,user-information.UID,information.content,information.title,information.date from information-user,information where user-information.UID = $uid and user-information.IID = information.IID and information.type = 's' and information.visible= 't'");
+		
+		//$query = $this->db->query("select user-information.IID,user-information.UID,information.content,information.title,information.date from information JOIN user-information ON (`user-information`.IID = information.IID) where information.type = 's' and information.visible= 't' and user-information.UID = $uid");
+		$this->db->select("user_information.IID,user_information.UID,information.content,information.title,information.date");
+		$this->db->from('information');
+		$this->db->join('user_information', "user_information.IID = information.IID");
+		$this->db->where('UID', $uid);
+		$this->db->where('type', 's');
+		$query = $this->db->get();
 		if($query->num_rows() > 0)
-			$data['public'] = $query->result_array();
+			$data['private'] = $query->result_array();
 		else
-			$data['public']=false;
-		$data['public-num'] = $query->num_rows();
+			$data['private']=false;
+		$data['private-num'] = $query->num_rows();
+		
 		$query = $this->db->query("select content,title,date from information where type= 'p' and visible= 't'");
 		if($query->num_rows() > 0 )
-			$data['private'] = $query->result_array();
+			$data['public'] = $query->result_array();
 		else 
-			$data['private'] = false;
-		$data['private-num']=$query->num_rows();
+			$data['public'] = false;
+		$data['public-num']=$query->num_rows();
 		return $data;
 	}
 	//End of function get_information

@@ -24,7 +24,7 @@ class dashboard extends CI_Controller
 		$user = $this->user->get_account_info($this->uid,'u');
 		$user['turn_over'] = $this->user->monthly_turn_over($this->uid);
 		$requests = $this->request->get_user_open_requests($this->uid);
-		$designer = $this->desginer->get_designer_list();
+		$designer = $this->designer->get_designer_list();
 		$information = $this->user->get_information($this->uid);
 		$this->load->view('dashboard',array('user' => $user , 'request' => $request , 'designer' => $desginer , 'information' => $information,'error' => $error));		
 	}
