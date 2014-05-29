@@ -7,6 +7,21 @@ class User extends CI_Model
 		parent::__construct();
 		$this->load->database();
 	}
+	public function get_account_info($id,$flag='u')
+	{
+	if($flag == 'u')
+		{
+			$query = $this->db->query("select * from user where UID = \"$id\";");
+				$row = $query->row();
+      				return $row;	
+		}
+		if($flag == 'd')
+		{
+			$query = $this->db->query("select * from designer where DID = \"$id\";");
+				$row = $query->row();
+      				return $row;	
+		}
+	}
 	public function login_permision($email , $password, $flag='u')
 	{
 		if($flag == 'u')
