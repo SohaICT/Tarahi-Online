@@ -89,7 +89,8 @@ class User extends CI_Model
 		$start = implode('-', array(jdate('Y'), jdate('m'), '01', '00', '00', '00') );
 		$query="SELECT SUM(amount) as `turn_over` FROM bank_payment WHERE date > $start ;";
 		$q = $this->db->query($query);
-		return $q->turn_over;
+		$r = $q->row();
+		return $r->turn_over;
 	}
 	
 }
