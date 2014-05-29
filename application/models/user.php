@@ -71,14 +71,16 @@ class User extends CI_Model
 	{
 		$query = $this->db->query("select user-information.IID,user-information.UID,information.content,information.title,information.date from information-user,information where user-information.UID = $uid and user-information.IID = information.IID and information.type = 's' and information.visible= 't'");
 		if($query->num_rows() > 0)
-			$data['public']['index'] = $query->row();
+			$data['public'] = $query->result_array();
 		else
-			$data['public']['index']=false;
+			$data['public']=false;
+		$data['public-num'] = $query->num_rows();
 		$query = $this->db->query("select content,title,date from information where type= 'p' and visible= 't'");
 		if($query->num_rows() > 0 )
-			$data['privacy']['index'] = $query->row();
+			$data['private'] = $query->result_array();
 		else 
-			$data['privacy']['index'] = false;
+			$data['private'] = false;
+		$data['private-num']=$query->num_rows();
 		return $data;
 	}
 	//End of function get_information
