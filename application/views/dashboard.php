@@ -53,10 +53,10 @@
                            <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#compose-modal"><i class="fa fa-pencil"></i> افزایش اعتبار</a>
                             
                         </li>
-						    <!-------------------------------------------------------------------------------------------------------------   پیام ها  -->
+						    <!--------------  messssages-----------------------------------------------------------------------------------------------   پیام ها  -->
 						<li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope"></i>
+                                <i class="fa fa-warning"></i>
                                 <span class="label label-success"><?php echo $information['private-num']+$information['public-num'];?></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -122,47 +122,8 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        <!-- -----------------------------------------------------------------------------------------------------notifications-->
-                        <li class="dropdown messages-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                <span class="label label-warning"><?php echo $information['private-num']+$information['public-num'];?></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
 
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
+
                         
                        
 <!----------------------------------------------------------------    مشخصات کاربر----------------------------------->
@@ -182,34 +143,43 @@
                                 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <form action="#" method="get">
+                                    <form action="<?php echo site_url('dashboard/user_edit');?>" method="post">
                         
 						<div class="form-group">
-                                        <label>Color picker with addon:</label>
+						<?php if(isset($user_edit_error)):?>
+                                        <div class="alert alert-danger">
+                                        <p><?php echo $user_edit_error;?></p>
+                                        </div>
+                       <?php endif;?>
+                                        <label>نام</label>
                                         <div class="input-group my-colorpicker2">                                            
-                                            <input type="text" class="form-control"/>
+                                            <input type="text" name="name" class="form-control"/>
 											
                                         </div><!-- /.input group -->
-										<label>Color picker with addon:</label>
+										<label>شماره موبایل</label>
                                         <div class="input-group my-colorpicker2">                                            
-                                            <input type="text" class="form-control"/>
+                                            <input type="text" name="mobile" class="form-control"/>
 											
                                         </div><!-- /.input group -->
-										<label>Color picker with addon:</label>
+										<label>پسورد قدیم</label>
                                         <div class="input-group my-colorpicker2">                                            
-                                            <input type="text" class="form-control"/>
+                                            <input type="text" name="password" class="form-control"/>
 											
                                         </div><!-- /.input group -->
-										<label>Color picker with addon:</label>
+										<label>پسورد جدید</label>
                                         <div class="input-group my-colorpicker2">                                            
-                                            <input type="text" class="form-control"/>
+                                            <input type="text" name="new_password" class="form-control"/>
 											
+                                        </div><!-- /.input group -->
+										<label>تکرار پسورد جدید</label>
+                                        <div class="input-group my-colorpicker2">                                            
+                                            <input type="text" name="new_password_confirm" class="form-control"/>
                                         </div><!-- /.input group -->
 										
                                     </div><!-- /.form group -->
-						
+					<button type="submit" class="btn btn-primary">Submit</button>						
                     </form>
-					<button type="submit" class="btn btn-primary">Submit</button>
+
                                 </li>
                             </ul>
                         </li>

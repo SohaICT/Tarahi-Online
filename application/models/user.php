@@ -13,7 +13,9 @@ class User extends CI_Model
 		{
 			$query = $this->db->query("select * from user where UID = \"$id\";");
 				$row = $query->row_array();
-      				return $row;	
+				{
+					return $row;
+				}
 		}
 		if($flag == 'd')
 		{
@@ -30,9 +32,7 @@ class User extends CI_Model
 			if($query->num_rows() > 0)
 			{
 				$row = $query->row_array();
-				$this->load->library('encrypt');
-				$p = $this->encrypt->decode($row->password);
-      			if($p == $password)
+      			if($row['password'] == $password)
       				return $row;
       			else 
       				return false;	
@@ -99,6 +99,11 @@ class User extends CI_Model
 		$q = $this->db->query($query);
 		$r = $q->row();
 		return $r->turn_over;
+	}
+	public function edit_user($data,$id)
+	{
+		$this->db->where('UID',$id);
+		$this->db->update('user',$data);
 	}
 	
 }
