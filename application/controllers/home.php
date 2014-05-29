@@ -6,7 +6,6 @@ class Home extends CI_Controller
 	{
 		$this->load->model('gallery');
 		$data['gallery'] = $this->gallery->get_gallery(JNG_GALLERY , 1);
-		
 		//@todo: load home view	
 	}//End of function index()
 	public function login()
