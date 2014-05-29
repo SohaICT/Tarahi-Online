@@ -12,13 +12,13 @@ class User extends CI_Model
 	if($flag == 'u')
 		{
 			$query = $this->db->query("select * from user where UID = \"$id\";");
-				$row = $query->row();
+				$row = $query->row_array();
       				return $row;	
 		}
 		if($flag == 'd')
 		{
 			$query = $this->db->query("select * from designer where DID = \"$id\";");
-				$row = $query->row();
+				$row = $query->row_array();
       				return $row;	
 		}
 	}
@@ -29,7 +29,7 @@ class User extends CI_Model
 			$query = $this->db->query("select * from user where email = \"$email\";");
 			if($query->num_rows() > 0)
 			{
-				$row = $query->row();
+				$row = $query->row_array();
 				$this->load->library('encrypt');
 				$p = $this->encrypt->decode($row->password);
       			if($p == $password)
@@ -43,7 +43,7 @@ class User extends CI_Model
 			$query = $this->db->query("select * from designer where email = \"$email\";");
 			if($query->num_rows() > 0)
 			{
-				$row = $query->row();
+				$row = $query->row_array();
 				$this->load->library('encrypt');
 				$p = $this->encrypt->decode($row->password);
       			if($p == $password)

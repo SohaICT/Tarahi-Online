@@ -1,30 +1,31 @@
 <?php
-class dashboard extends CI_Model
+class dashboard extends CI_Controller
 {
 	var $uid;
 	var $email;
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
 		$this->email = $this->session->userdata('email');
 		$this->uid = $this->session->userdata('uid');
 	}
 	public function test_session()
 	{
 		$this->load->library('session');
-		$this->session->set_userdata('UID',2);
-		$this->session->set_userdata('Email','javati@jevad.ir');
+		$this->session->set_userdata('uid',2);
+		$this->session->set_userdata('email','javati@jevad.ir');
 	} 
 	public function index($error = false)
 	{
 		$this->load->model('user');
 		$this->load->model('designer');
 		$this->load->model('request');
-		$user = $this->user->get_information($uid,'u');
-		$user['turn_over'] = $this->user->monthly_turn_over($uid);
-		$requests = $this->request->get_user_open_requests($uid);
+		$user = $this->user->get_account_info($this->uid,'u');
+		$user['turn_over'] = $this->user->monthly_turn_over($this->uid);
+		$requests = $this->request->get_user_open_requests($this->uid);
 		$designer = $this->desginer->get_designer_list();
-		$information = $this->user->get_information($uid);
+		$information = $this->user->get_information($this->uid);
 		$this->load->view('dashboard',array('user' => $user , 'request' => $request , 'designer' => $desginer , 'information' => $information,'error' => $error));		
 	}
 	public function user_edit()
