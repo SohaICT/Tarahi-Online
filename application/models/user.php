@@ -76,6 +76,7 @@ class User extends CI_Model
 		$this->db->join('user_information', "user_information.IID = information.IID");
 		$this->db->where('UID', $uid);
 		$this->db->where('type', 's');
+		$this->db->where('visible','t');
 		$query = $this->db->get();
 		if($query->num_rows() > 0)
 			$data['private'] = $query->result_array();
@@ -83,7 +84,7 @@ class User extends CI_Model
 			$data['private']=false;
 		$data['private-num'] = $query->num_rows();
 		
-		$query = $this->db->query("select content,title,date from information where type= 'p' and visible= 't'");
+		$query = $this->db->query("select content,title,date from information where type= 'b' and visible= 't'");
 		if($query->num_rows() > 0 )
 			$data['public'] = $query->result_array();
 		else 

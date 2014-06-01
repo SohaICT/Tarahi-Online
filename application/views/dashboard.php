@@ -63,60 +63,39 @@
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
+                                        <?php 
+                                        if($information['public'] != false)
+                                        foreach($information['public'] as $inform):
+                                        ?>
                                         <li>
                                             <a href="#">
-                                            <h4>title</h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="<?php echo base_url('assets/img/avatar2.png');?>" class="img-circle" alt="user image"/>
-                                                </div>
                                                 <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                    <?php echo $inform['title'];?>
+                                                    <small><i class="fa fa-clock-o"></i><?php echo normal_view($inform['date']); ?></small>
                                                 </h4>
-                                                <p>Why not buy a new awesome theme?</p>
+                                                <p><?php echo $inform['content'];?></p>
                                             </a>
                                         </li>
+                                        <?php endforeach;?>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <?php 
+                                        if($information['private'] != false)
+                                        foreach($information['private'] as $inform):
+                                        ?>
                                         <li>
                                             <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
                                                 <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
+                                                    <?php echo $inform['title'];?>
+                                                    <small><i class="fa fa-clock-o"></i><?php echo normal_view($inform['date']); ?></small>
                                                 </h4>
-                                                <p>Why not buy a new awesome theme?</p>
+                                                <p><?php echo $inform['content'];?></p>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="<?php echo base_url('assetsimg/avatar2.png');?>" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </li>
                                 <li class="footer"><a href="#">See All Messages</a></li>
@@ -315,7 +294,7 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53<sup style="font-size: 20px">%</sup>
+                                       <?php echo $user['turn_over'];?><sup style="font-size: 20px">%</sup>
                                     </h3>
                                     <p>
                                         بن تخفیف شما
@@ -334,7 +313,7 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        <?php echo $user['credit'];?>
                                     </h3>
                                     <p>
                                        اعتبار اکانت شما
@@ -373,7 +352,7 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h4>
-                                        user name
+                                        <?php echo $user['name'];?>
                                     </h4>
                                     <p>
                                        اطلاعات کاربری
@@ -394,323 +373,49 @@
 					<!------------------------------------------------------------------------------------------------------ گالری و ضعیت طرح >
 					 
                     <!-- Solid boxes -->
-                    <div class="row">
-                 
-
-                        <div class="col-md-8">
-                            <!-- Primary box -->
-                            <div class="box box-solid box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">نمونه های اولیه </h3>
-                                    <div class="box-tools pull-left">
-                                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                      
-                                    </div>
-                                </div>
-                                <div class="box-body">
-                                  
-                                    <div id="simple_gallery" class="box-content">
-				<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-					<img src="<?php echo base_url('assets/img/9036958611_fa1bb7f827_m.jpg');?>" alt="" />
-				</a>
-				<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-					<img src="<?php echo base_url('assets/img/9041440555_2175b32078_m.jpg');?>" alt="" />
-				</a>
-				<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-					<img src="<?php echo base_url('assets/img/8985207189_01ea27882d_m.jpg');?>" alt="" />
-				</a>
-				<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-					<img src="<?php echo base_url('assets/img/8962691008_7f489395c9_m.jpg');?>" alt="" />
-				</a>
-				
-				
-			</div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.col -->
-
+<?php 
+$i=1;
+foreach($request as $r):
+?>
+<?php if($i%3 == 1) echo "<div class=\"row\">";?>
                     <div class="col-md-4">
                             <!-- Danger box -->
                             <div class="box box-solid box-danger">
                                 <div class="box-header">
-                                    <h3 class="box-title"> وضعیت سفارش</h3>
+                                    <h3 class="box-title">وضعیت سفارش <?php echo $r['RID'];?></h3>
                                     <div class="box-tools pull-left">
                                         <button class="btn btn-danger btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
                                 </div>
                                 <div class="box-body">
-                                    Box class: <code>.box.box-solid.box-danger</code>
-                                    <p>
-                                        amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
-                                        berliner weisse wort chiller adjunct hydrometer alcohol aau!
-                                        sour/acidic sour/acidic chocolate malt ipa ipa hydrometer
-										 amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
-                                        berliner weisse wort chiller adjunct hydrometer alcohol aau!
-                                        sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
-                                    </p>
+                                    <?php echo "نام طراح :".$r['designer_name'];?>
+                                 <hr/>
+                                 	وضعیت :
+                                  	<?php if($r['status'] == "j") echo "تازه باز شده"?>
+                                  	<?php if($r['status'] == "a") echo "تایید شده"?>
+									<?php if($r['status'] == "p") echo "تکمیل پرداخت"?>
+									<?php if($r['status'] == "d") echo "تکمیل شده پرداخت نشده"?>                                  	
+                                  <hr/>
+                                  	<a href="#"></a>
+                                  <hr/>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div><!-- /.col -->    
-                    </div><!-- /.row -->
-
+  <?php if($i%3 == 0) echo "</div>";?>
+<?php $i++;?>
+<?php endforeach;?>
+<?php if($i%3 != 1) echo "</div>";?>
                     
 					<!--------------------------------------------------------------------------------------->
-				
+				<div class="alert alert-danger" style="margin-bottom: 0!important;">
+                        <i class="fa fa-info"></i>
+                        <b>Note:</b> This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                    </div>
+					</br>
 					
 					<!----------------------------------------------------------------------    فرم ها -------------------------------------->
-					<div class="row">
-                        <div class="col-md-6">
-
-                            <div class="box box-danger">
-                                <div class="box-header">
-                                    <h3 class="box-title">Input masks</h3>
-                                </div>
-                                <div class="box-body">
-                                    <!-- Date dd/mm/yyyy -->
-                                    <div class="form-group">
-                                        <label>Date masks:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- Date mm/dd/yyyy -->
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                            <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- phone mask -->
-                                    <div class="form-group">
-                                        <label>US phone mask:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-phone"></i>
-                                            </div>
-                                            <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- phone mask -->
-                                    <div class="form-group">
-                                        <label>Intl US phone mask:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-phone"></i>
-                                            </div>
-                                            <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- IP mask -->
-                                    <div class="form-group">
-                                        <label>IP mask:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-laptop"></i>
-                                            </div>
-                                            <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-
-                            <div class="box box-info">
-                                <div class="box-header">
-                                    <h3 class="box-title">Color & Time Picker</h3>
-                                </div>
-                                <div class="box-body">
-                                    <!-- Color Picker -->
-                                    <div class="form-group">
-                                        <label>Color picker:</label>                                         
-                                        <input type="text" class="form-control my-colorpicker1"/>
-                                    </div><!-- /.form group -->
-
-                                    <!-- Color Picker -->
-                                    <div class="form-group">
-                                        <label>Color picker with addon:</label>
-                                        <div class="input-group my-colorpicker2">                                            
-                                            <input type="text" class="form-control"/>
-                                            <div class="input-group-addon">
-                                                <i></i>
-                                            </div>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- time Picker -->
-                                    <div class="bootstrap-timepicker">
-                                        <div class="form-group">
-                                            <label>Time picker:</label>
-                                            <div class="input-group">                                            
-                                                <input type="text" class="form-control timepicker"/>
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-clock-o"></i>
-                                                </div>
-                                            </div><!-- /.input group -->
-                                        </div><!-- /.form group -->
-                                    </div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-
-                        </div><!-- /.col (left) -->
-                        <div class="col-md-6">
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">Date picker</h3>
-                                </div>
-                                <div class="box-body">
-                                    <!-- Date range -->
-                                    <div class="form-group">
-                                        <label>Date range:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                            <input type="text" class="form-control pull-right" id="reservation"/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- Date and time range -->
-                                    <div class="form-group">
-                                        <label>Date and time range:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-clock-o"></i>
-                                            </div>
-                                            <input type="text" class="form-control pull-right" id="reservationtime"/>
-                                        </div><!-- /.input group -->
-                                    </div><!-- /.form group -->
-
-                                    <!-- Date and time range -->
-                                    <div class="form-group">
-                                        <label>Date range button:</label>
-                                        <div class="input-group">
-                                            <button class="btn btn-default pull-right" id="daterange-btn">
-                                                <i class="fa fa-calendar"></i> Date range picker
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                    </div><!-- /.form group -->
-
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-
-                            <!-- iCheck -->
-                            <div class="box box-success">
-                                <div class="box-header">
-                                    <h3 class="box-title">iCheck - Checkbox & Radio Inputs</h3>
-                                </div>
-                                <div class="box-body">
-                                    <!-- Minimal style -->
-
-                                    <!-- checkbox -->
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" class="minimal" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="minimal"/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="minimal" disabled/>
-                                            Minimal skin checkbox
-                                        </label>
-                                    </div>
-
-                                    <!-- radio -->
-                                    <div class="form-group">                                    
-                                        <label>
-                                            <input type="radio" name="r1" class="minimal" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r1" class="minimal"/>                                                    
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r1" class="minimal" disabled/>
-                                            Minimal skin radio
-                                        </label>
-                                    </div>
-
-                                    <!-- Minimal red style -->
-
-                                    <!-- checkbox -->
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" class="minimal-red" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="minimal-red"/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="minimal-red" disabled/>
-                                            Minimal red skin checkbox
-                                        </label>
-                                    </div>
-
-                                    <!-- radio -->
-                                    <div class="form-group">                                    
-                                        <label>
-                                            <input type="radio" name="r2" class="minimal-red" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r2" class="minimal-red"/>                                                    
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r2" class="minimal-red" disabled/>
-                                            Minimal red skin radio
-                                        </label>
-                                    </div>
-
-                                    <!-- Minimal red style -->
-
-                                    <!-- checkbox -->
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" class="flat-red" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="flat-red"/>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" class="flat-red" disabled/>
-                                            Flat red skin checkbox
-                                        </label>
-                                    </div>
-
-                                    <!-- radio -->
-                                    <div class="form-group">                                    
-                                        <label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r3" class="flat-red"/>                                                    
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="r3" class="flat-red" disabled/>
-                                            Flat red skin radio
-                                        </label>
-                                    </div>
-                                </div><!-- /.box-body -->
-                                <div class="box-footer">
-                                    Many more skins available.
-                                </div>
-                            </div><!-- /.box -->
-                        </div><!-- /.col (right) -->
-                    </div><!-- /.row --> 
-					
-					<!----------------------------------------------------------------------------->
-					
-					
-
-                    <!-- top row -->
+					<form action="<?php echo site_url('dashboard/add_request'); ?>" method = "post" enctype="multipart/form-data">
+	                   <!-- top row -->
                     <div class="row">
                         <div class="col-xs-12 connectedSortable">
                             
@@ -723,192 +428,424 @@
                         <!-- Left col -->
                         <section class="col-lg-6 connectedSortable"> 
                            <!-- general form elements -->
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">Quick Example</h3>
-                                </div><!-- /.box-header -->
-                                <!-- form start -->
-                                <form role="form">
-                                    <div class="box-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" id="exampleInputFile">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Check me out
-                                            </label>
-                                        </div>
-                                    </div><!-- /.box-body -->
-
-                                    <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </form>
-                            </div><!-- /.box -->
-                                
-                                
-                           
-                            
-                           
-                           
-                                                
-                          
-
-                            <!-- quick email widget -->
-                            <div class="box box-info">
-                                <div class="box-header">
-                                    <i class="fa fa-envelope"></i>
-                                    <h3 class="box-title">Quick Email</h3>
-                                    
-                                    
-                                </div>
-                                <div class="box-body">
-                                    <form action="#" method="post">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="emailto" placeholder="Email to:"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="subject" placeholder="Subject"/>
-                                        </div>
-                                        <div>
-                                            <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="box-footer clearfix">
-                                    <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
-                                </div>
-                            </div>
-
-                        </section><!-- /.Left col -->
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-6 connectedSortable">
-                                                 
-
-                            <!-- TO DO List -->
-                            <div class="box box-primary">
+						   <!-- -----------جزئیات المان های طرح ------------------------------------------------------------>
+						   
+                                 <div class="box box-primary">
                                 <div class="box-header">
                                     <i class="ion ion-clipboard"></i>
-                                    <h3 class="box-title">To Do List</h3>
-                                    <div class="box-tools pull-right">
-                                        <ul class="pagination pagination-sm inline">
-                                            <li><a href="#">&laquo;</a></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">&raquo;</a></li>
-                                        </ul>
-                                    </div>
+                                    <h3 class="box-title"> جزئیات المان های طرح </h3>
+                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
+								 <p class="alert alert-warning" >جزییات رو بگو</p>
+								
                                     <ul class="todo-list">
+                                        <label>نورپردازی</label>
                                         <li>
-                                            <!-- drag handle -->
                                             <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="lighting" class="flat-red" value="1" checked/>داشته باشد                                     
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="lighting" class="flat-red" value="2" />نداشته باشد                                      
+                                           </label> 
+                                           <label>
+                                           <input type="radio" name="lighting" class="flat-red" value="3" />نظر طراح                                      
+                                           </label>                                   
+                                           </li>
+										
+										 <label>ارک سقفی</label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="arc" class="flat-red" value="1" checked/>داشته باشد                                     
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="arc" class="flat-red" value="2" />نداشته باشد                                      
+                                           </label> 
+                                           <label>
+                                           <input type="radio" name="arc" class="flat-red" value="3" />نظر طراح                                      
+                                           </label>                                   
+                                           </li>
+											<label>اپن حجمی</label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="hajmi" class="flat-red" value="1" checked/>داشته باشد                                     
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="hajmi" class="flat-red" value="2"/>نداشته باشد                                      
+                                           </label> 
+                                           <label>
+                                           <input type="radio" name="hajmi" class="flat-red" value="3"/>نظر طراح                                      
+                                           </label>                                   
+                                           </li>
+                                           <label>اپن جزیره ای</label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="jazire" class="flat-red" value="1" checked/>داشته باشد                                     
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="jazire" class="flat-red" value="2"/>نداشته باشد                                      
+                                           </label> 
+                                           <label>
+                                           <input type="radio" name="jazire" class="flat-red" value="3"/>نظر طراح                                      
+                                           </label>                                   
+                                           </li>								
+										
+										   <label> نوع سینک</label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="sink" class="flat-red" value="1" checked/>توکار                                  
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="sink" class="flat-red" value="2"/>روکار                                    
+                                           </label>                                    
+                                           </li>
+										   <label> کف </label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="radio" name="kaf" class="flat-red" value="1" checked/>پارکت
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="kaf" class="flat-red" value="2"/>سرامیک                                     
+                                           </label>                                    
+                                           </li>
+                                            <label> تجهیزات </label>
+                                        <li>
+                                            <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>                                                                          
+                                            <label>
+                                            <input type="checkbox" value="" name="side"/>                                            
+                                            <!-- todo text -->
+                                            <span class="text">یخچال ساید بای ساید </span>                                
+                                           </label>
+										    <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>
+											<label>
+                                            <input type="checkbox" value="" name="gaz"/>                                            
+                                            <!-- todo text -->
+                                            <span class="text">گاز رومیزی </span>                                
+                                           </label>
+<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>										   
+                                            <label>
+											  
+                                            <input type="checkbox" value="" name="fer"/>                                            
+                                            <!-- todo text -->
+                                            <span class="text">فر</span>                                
+                                           </label>
+										     
+											 <span class="handle">
                                                 <i class="fa fa-ellipsis-v"></i>
                                                 <i class="fa fa-ellipsis-v"></i>
                                             </span>  
-                                            <!-- checkbox -->
-                                            <input type="checkbox" value="" name=""/>                                            
+                                            <label>
+                                            <input type="checkbox" value="" name="microfer"/>
+                                            <span class="text">ماکروفر </span>  
+                                             </label>
+											  
+											  <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+											  <label>
+                                            <input type="checkbox" value="" name="mashinl"/>                                            
+                                           
+                                            <span class="text">ماشین لباس شویی</span>                                
+                                           </label>
+<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  										   
+                                         	 <label>
+                                            <input type="checkbox" value="" name="mashinz"/>                                            
                                             <!-- todo text -->
-                                            <span class="text">Design a nice theme</span>
-                                            <!-- Emphasis label -->
-                                            <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                                            <!-- General tools such as edit or delete-->
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>                                            
-                                            <input type="checkbox" value="" name=""/>
-                                            <span class="text">Make the theme responsive</span>
-                                            <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                                            <input type="checkbox" value="" name=""/>
-                                            <span class="text">Let theme shine like a star</span>
-                                            <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                                            <input type="checkbox" value="" name=""/>
-                                            <span class="text">Let theme shine like a star</span>
-                                            <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                                            <input type="checkbox" value="" name=""/>
-                                            <span class="text">Check your messages and notifications</span>
-                                            <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                                            <input type="checkbox" value="" name=""/>
-                                            <span class="text">Let theme shine like a star</span>
-                                            <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                                            <div class="tools">
-                                                <i class="fa fa-edit"></i>
-                                                <i class="fa fa-trash-o"></i>
-                                            </div>
-                                        </li>
+                                            <span class="text">ماشین ظرف شویی</span>                                
+                                           </label>									   
+                                           </li>                                 
                                     </ul>
-                                </div><!-- /.box-body -->
-                                <div class="box-footer clearfix no-border">
-                                    <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-                                </div>
+								
+                                </br>
+                            		
+                                
+							</div><!-- /.box -->
+
+
+
+                        </section><!-- /.Left col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+						
+                       <!-- -----------آپلود  ------------------------------------------------------------>
+                        <section class="col-lg-6 connectedSortable">
+							<div class="box box-primary">
+                                <div class="box-header">
+                                <i class="ion ion-clipboard"></i>
+                                    <h3 class="box-title">آپلود نقشه </h3>
+                                </div><!-- /.box-header -->
+
+                                <!-- form start -->
+                               
+                                    <div class="box-body">
+                                        
+                                            <p class="alert alert-warning" >نقشرو آپلود کن</p>
+                                            
+                                        
+                                     
+                                        <div class="form-group">
+										 <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>
+                                            <label for="exampleInputFile">در صورتی که  می خواهید یک عکس را ارسال کنید از دکمه زیر استفاده کنید</label>
+                                            <input input type="file" name = "userfile" class="form-control" placeholder="">
+                                            
+                                        </div>
+										
+										</br> </hr>
+										<div>
+                                            <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                        </div>
+                                       </br>  
+                                       <label> انتخاب طراح</label></br>
+                                       
+                                                                                                                 
+                                            <label>
+                                            <input type="radio" name="tarrah" class="flat-red" value="1" checked/>طراح1
+                                           </label>
+                                           <label>
+                                           <input type="radio" name="tarrah" class="flat-red" value="2"/>طراح2                                     
+                                           </label>
+                                           <label>
+                                            <input type="radio" name="tarrah" class="flat-red" value="3" />طراح3
+                                           </label>                                    
+                                           
+                                    </div><!-- /.box-body -->
+
+                                    
+                                
                             </div><!-- /.box -->
 							 
                             
 							
 
-                        </section><!-- right col -->
-                    </div><!-- /.row (main row) -->
+                        </section>
+						<!--  انتخاب رنگ و چوب----------------------------------------------------------------------------------->
+				<section class="content">
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <div class='box box-info'>
+                                <div class='box-header'>
+								    <i class="ion ion-clipboard"></i>
+                                    <h3 class='box-title'>انتخاب نوع چوب و رنگ <h3>
+                                    </div><!-- /.box-header -->
+								 <p style="margin-right:20px" class="alert alert-warning" >جزییات رنگ رو مشخص کن لاشی</p>
+								<div style="margin-right:20px">
+								<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+								<label> نوع چوب</label> 
+                                    <div class="form-group">
+									
+                                        <label>
+                                            <input type="radio" name="wood_type" class="flat-red" value="1" checked/>
+                                              هایگلاس
+                                        </label>
+										<label>
+                                         <input type="radio" name="wood_type" class="flat-red" value="2"/>
+                                              عادی
+                                        </label>
+                                    </div>
+									<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+									<label> ترکیب رنگ</label> 
+                                    <div class="form-group">
+									
+                                        <label>
+                                            <input type="radio" name="tak_rang" class="flat-red" value="1" checked/>
+                                         دو رنگ
+                                        </label>
+										<label>
+                                            <input type="radio" name="tak_rang" class="flat-red" value="2"/>
+                                         تک رنگ
+                                        </label>
+                                    </div>
+                                    <span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>
+                                        <label>
+                                        <!-- ##TAINJA -->
+                                            <input type="checkbox" name="csbd" class="flat-red" />
+                                         انتخاب رنگ با طراح
+                                                                                 </label>
+										
+                                   </br>
+									<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+									<label>رنگ اول</label> 
+                                    <div class="form-group">
+									
+                                        <label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+<input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+                                    </div>
+<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+									<label>رنگ دوم</label> 
+                                    <div class="form-group">
+									
+                                        <label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                           <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+                                    </div>
+                                         
+										<span class="handle">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>  
+										<label>کاشی بین کابین</label> 
+                                    <div class="form-group">
+									
+                                        <label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                           <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+										<label>
+                                         <input type="radio" name="r3" class="flat-red" checked/>
+					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
+                                        </label>
+										<label>
+                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                             <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
+                                        </label>
+                                    </div>
+                                         
+                                            </br>
+											<div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+								
+								
+                            </div><!-- /.box -->
+                        </div><!-- /.col-->
+                    </div><!-- ./row -->
+                </section>
 
-                </section><!-- /.content -->
+				</form>
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
