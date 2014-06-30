@@ -719,35 +719,35 @@ foreach($request as $r):
                                     <div class="form-group">
 									
                                         <label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c1" class="flat-red" value="1" checked/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-<input type="radio" name="r3" class="flat-red" checked/>
+										<input type="radio" name="c1" class="flat-red" value="2" />
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c1" class="flat-red" value="3" />
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c1" class="flat-red"  value="4"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c1" class="flat-red" value="5"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c1" class="flat-red" value="6"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c1" class="flat-red" value="7"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c1" class="flat-red" value="8"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
                                     </div>
@@ -759,35 +759,35 @@ foreach($request as $r):
                                     <div class="form-group">
 									
                                         <label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c2" class="flat-red"  value="1" checked/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c2" class="flat-red" value="2"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c2" class="flat-red" value="3"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c2" class="flat-red" value="4"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c2" class="flat-red" value="5"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                           <input type="radio" name="r3" class="flat-red" checked/>
+                                           <input type="radio" name="c2" class="flat-red" value="6"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="c2" class="flat-red" value="7"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="c2" class="flat-red"value="8"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
                                     </div>
@@ -800,35 +800,35 @@ foreach($request as $r):
                                     <div class="form-group">
 									
                                         <label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="kashi" class="flat-red" value="1" checked/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="kashi" class="flat-red" value="2"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="kashi" class="flat-red" value="3"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="kashi" class="flat-red" value="4"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="kashi" class="flat-red" value="5"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                           <input type="radio" name="r3" class="flat-red" checked/>
+                                           <input type="radio" name="kashi" class="flat-red" value="6"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
 										<label>
-                                         <input type="radio" name="r3" class="flat-red" checked/>
+                                         <input type="radio" name="kashi" class="flat-red" value="7"/>
 					                     <img src="<?php echo base_url('assets/img/p1.png');?>" alt="" />
                                         </label>
 										<label>
-                                            <input type="radio" name="r3" class="flat-red" checked/>
+                                            <input type="radio" name="kashi" class="flat-red" value="8"/>
                                              <img src="<?php echo base_url('assets/img/p2.png');?>" alt="" />
                                         </label>
                                     </div>

@@ -46,6 +46,15 @@ class Home extends CI_Controller
 		$this->session->set_userdata('user_name' , $user['name']);
 		$this->session->set_userdata('user_mobile' , $user['mobile']);
 	}//End of function create_session()
+	public function designer_form($did)
+	{
+		$this->load->model('designer');
+		$this->load->model('gallery');
+		$data['info'] = $this->designer->get_designer_info($did);
+		$data['gallery'] = $this->gallery->get_gallery($data['info']['GID'],$flag=1);
+		//echo $data['gallery']['photos']['PID'];
+		$this->load->view('designer_page',$data);
+	}
 }//End of class home
 /*
  * End of file home.php

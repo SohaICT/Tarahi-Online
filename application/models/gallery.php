@@ -32,7 +32,7 @@ class Gallery extends CI_Model
 		$query = $this->db->get();
 		if($query->num_rows() == 0 )
 			return false;
-		$data['gallery']=$query->reslut_array();
+		$data['gallery']=$query->row_array();
 		if($flag != 0)
 		{
 			$this->db->select('*');
@@ -40,7 +40,7 @@ class Gallery extends CI_Model
 			$this->db->where('GID',$gid);
 			$query1 = $this->db->get();
 			if($query1->num_rows() != 0)
-				$data['photos']=$query1->reslut_array();
+				$data['photos']=$query1->row_array();
 			else
 				$data['photos']=NULL;
 		}

@@ -20,12 +20,14 @@ class Designer extends CI_Model
 	public function get_designer_info($did)
 	//OUTPUT: (num_rows() > 0): $array[i][DID,name,intro] else NULL
 	{
-		$this->db->select('DID , name , intro');
+		$this->db->select('DID , name , intro,GID');
 		$this->db->from('designer');
 		$this->db->where('DID',$did);
 		$query = $this->db->get();
 		if($query->num_rows() == 0)
 			return false;
-		return $query->result_array();
+		//$data=$query->row_array();
+		//echo $data['name'];
+		return $query->row_array();
 	}
 }

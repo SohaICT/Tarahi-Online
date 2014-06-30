@@ -67,4 +67,10 @@ class dashboard extends CI_Controller
 		$this->form_validation->set_message('passcheck', 'پسورد غلط میباشد');
 			return false;
 	}
+	public function add_request()
+	{
+		$this->load->library('form_validation');
+		$this->lang->load('form_validation','fa');
+		$this->form_validation->set_rules();
+	}
 }
